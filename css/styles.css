@@ -38,8 +38,6 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
-  min-width: 169px;
-  height: 56px;
 }
 .container {
   width: 1158px;
@@ -146,6 +144,8 @@ img {
   background-color: #4d5ae5;
   border-radius: 4px;
   border: 0;
+  min-width: 169px;
+  height: 56px;
 }
 .more-btn:is(:hover, :focus) {
   background-color: #404bbf;
@@ -211,10 +211,10 @@ img {
 
   background-color: #ffffff;
 }
-li > img {
+.team-item > img {
   margin-bottom: 32px;
 }
-li > p {
+.team-item > p {
   margin-top: 8px;
   margin-bottom: 32px;
 }
@@ -277,49 +277,47 @@ li > p {
 }
 
 /** -----------------------MENU-PORTFOLIO---------------------- */
+.menu {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
 .menu-btn {
   color: #4d5ae5;
   background-color: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
+  padding: 12px 24px;
 }
-.menu {
-  padding-top: 96px;
-  padding-bottom: 120px;
-}
-.menu-list {
-  display: flex;
-
-  gap: 24px;
-}
-
 .menu-btn:is(:hover, :focus) {
   background-color: #404bbf;
   color: #ffffff;
 }
-.menu-item {
-  padding: 12px 24px;
+
+.menu-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
 }
 
 /** -----------------------WORKS-PORTFOLIO---------------------- */
 .works-list {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 72px;
-}
-.works-link {
-  display: block;
 }
 .works-item {
-  width: calc((100%-48px) / 3);
+  width: calc(100% / 3-48px);
+  margin-right: 24px;
   margin-bottom: 48px;
+  border-right: 1px solid #e7e9fc;
+  border-bottom: 1px solid #e7e9fc;
+  border-left: 1px solid #e7e9fc;
 }
-.works-item:nth-child(3n) {
-  margin-left: 0;
+.works-item.works-item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .works-title {
-  font-weight: 500;
+  width: 360px;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -327,14 +325,7 @@ li > p {
 }
 .works-text {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
-}
-.works-container {
-  width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0;
-  outline: 2px solid black;
 }
